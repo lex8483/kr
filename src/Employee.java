@@ -33,9 +33,10 @@ public class Employee {
             this.department = department;
     }
 
-    public void setSalary(int salary) {
+    public double setSalary(double salary) {
 
             this.salary = salary;
+        return salary;
     }
 
     @Override
