@@ -19,7 +19,7 @@ public class Main {
         maxSalary();
         meanSalary();
         printName();
-        setIndexSalary();
+        setIndexSalary(0.05);
 
     }
 
@@ -76,9 +76,8 @@ public class Main {
         }
     }
 
-    public static double setIndexSalary() {
+    public static double setIndexSalary(double index) {
         double sal = 0;
-        double index = 0.05;
         for (int i = 0; i < employees.length; i++) {
             sal = employees[i].setSalary(employees[i].getSalary() * index + employees[i].getSalary());
             System.out.println(employees[i]);
