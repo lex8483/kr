@@ -2,7 +2,7 @@ public class Employee {
     private String name;
     private int department;
     private double salary;
-    private static int id;
+    private int id;
     private static int countid;
 
     public Employee(String name, int department, int salary) {
@@ -36,7 +36,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "ФИО='" + name + '\'' + ", отдел=" + department + ", зарплата=" + salary;
+        return "ФИО='" + name + '\'' + ", отдел=" + department + ", зарплата=" + salary + ", id - " + id;
     }
 
 }
