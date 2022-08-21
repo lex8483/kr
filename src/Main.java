@@ -32,6 +32,8 @@ public class Main {
     public static double sumSalary() {
         double sum = 0;
         for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null) {
+            }
             sum = employees[i].getSalary() + sum;
         }
         return sum;
