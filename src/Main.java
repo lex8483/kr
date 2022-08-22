@@ -33,8 +33,8 @@ public class Main {
         double sum = 0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
+                sum = employees[i].getSalary() + sum;
             }
-            sum = employees[i].getSalary() + sum;
         }
         return sum;
     }
@@ -42,7 +42,7 @@ public class Main {
     public static double minSalary() {
         double min = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
-            if (min > employees[i].getSalary() & employees[i] != null) {
+            if (employees[i] != null && min > employees[i].getSalary()) {
                 min = employees[i].getSalary();
             }
         }
@@ -53,7 +53,7 @@ public class Main {
     public static double maxSalary() {
         double max = employees[0].getSalary();
         for (int i = 0; i < employees.length; i++) {
-            if (max < employees[i].getSalary() & employees[i] != null) {
+            if (employees[i] != null && max < employees[i].getSalary()) {
                 max = employees[i].getSalary();
             }
         }
@@ -72,7 +72,7 @@ public class Main {
 
     public static void printName() {
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getName() != null) {
+            if (employees[i] != null) {
                 System.out.println(employees[i].getName());
             }
         }
@@ -81,8 +81,10 @@ public class Main {
     public static double setIndexSalary(double index) {
         double sal = 0;
         for (int i = 0; i < employees.length; i++) {
-            sal = employees[i].setSalary(employees[i].getSalary() * index + employees[i].getSalary());
-            System.out.println(employees[i]);
+            if (employees[i] != null) {
+                sal = employees[i].setSalary(employees[i].getSalary() * index + employees[i].getSalary());
+                System.out.println(employees[i]);
+            }
         }
         return sal;
     }
