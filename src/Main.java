@@ -19,7 +19,7 @@ public class Main {
         maxSalary();
         meanSalary();
         printName();
-        setIndexSalary(0.05);
+        getIndexSalary(0.05);
 
     }
 
@@ -62,11 +62,16 @@ public class Main {
     }
 
     public static double meanSalary() {
-        double mean = 0;
-        if (employees.length != 0) {
-            mean = sumSalary() / employees.length;
-            System.out.println("Среденяя зарплата: " + mean);
+        double mean;
+        int id = 0;
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null) {
+                id = employees[i].getId();
+            }
         }
+        mean = sumSalary() / id;
+        String meanString = String.format("%.2f", mean);
+        System.out.println("Среденяя зарплата: " + meanString);
         return mean;
     }
 
@@ -78,7 +83,7 @@ public class Main {
         }
     }
 
-    public static double setIndexSalary(double index) {
+    public static double getIndexSalary(double index) {
         double sal = 0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null) {
